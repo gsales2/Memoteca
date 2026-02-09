@@ -6,6 +6,7 @@ const api = {
         }
         catch {
             alert('Erro ao buscar pensamentos')
+            throw error
         }
     }
 }
