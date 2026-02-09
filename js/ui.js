@@ -8,12 +8,12 @@ const ui = {
             const pensamentos = await api.buscarPensamentos()
             pensamentos.forEach(pensamento => {
                 listaPensamentos.innerHTML += `
-                <li class="li-pensamentos" data-id="${pensamento.id}">
-                <img src="assets/imagens/aspas-azuis.png" alt="Aspas azuis" class="icone-aspas">
-                <div class="pensamento-conteudo">${pensamento.conteudo}</div>
-                <div class="pensamento-autoria">${pensamento.autoria}</div>
-                </li>
-                `
+          <li class="li-pensamento" data-id="${pensamento.id}">
+          <img src="assets/imagens/aspas-azuis.png" alt="Aspas azuis" class="icone-aspas">
+          <div class="pensamento-conteudo">${pensamento.conteudo}</div>
+          <div class="pensamento-autoria">${pensamento.autoria}</div>
+          </li>
+        `
             })
         }
         catch {
