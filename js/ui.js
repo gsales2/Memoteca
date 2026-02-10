@@ -15,6 +15,7 @@ const ui = {
 
     async renderizarPensamentos() {
         const listaPensamentos = document.getElementById("lista-pensamentos")
+        listaPensamentos.innerHTML = ""
 
         try {
             const pensamentos = await api.buscarPensamentos()
@@ -47,6 +48,26 @@ const ui = {
         const botaoEditar = document.createElement("button")
         botaoEditar.classList.add("botao-editar")
         botaoEditar.onclick = () => ui.preencherFormulario(pensamento.id)
+
+        const botaoExcluir = document.createElement("button")
+        botaoExcluir.classList.add("botao-excluir")
+        botaoExcluir.onclick = async () => {
+            try {
+                await api.excluirPensamento(pensamento.id)
+                ui.renderizarPensamentos()
+            }
+            catch (error){
+                alert("Erro ao excluir pensamento")
+            }
+        }
+
+        const iconeExcluir = document.createElement("img")
+        iconeExcluir.src = "assets/imagens/icone-excluir.png"
+        iconeExcluir.alt = "Excluir"
+        botaoExcluir.appendChild(iconeExcluir)
+        icones.appendChild(botaoExcluir)
+
+
 
         const iconeEditar = document.createElement("img")
         iconeEditar.src = "assets/imagens/icone-editar.png"
