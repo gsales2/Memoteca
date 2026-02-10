@@ -65,9 +65,6 @@ const ui = {
         iconeExcluir.src = "assets/imagens/icone-excluir.png"
         iconeExcluir.alt = "Excluir"
         botaoExcluir.appendChild(iconeExcluir)
-        icones.appendChild(botaoExcluir)
-
-
 
         const iconeEditar = document.createElement("img")
         iconeEditar.src = "assets/imagens/icone-editar.png"
@@ -75,8 +72,9 @@ const ui = {
         botaoEditar.appendChild(iconeEditar)
 
         const icones = document.createElement("div")
-        icones.classList("icones")
-        icones.appendChild("botao-editar")
+        icones.classList.add("icones")
+        icones.appendChild(botaoEditar)
+        icones.appendChild(botaoExcluir)
 
         li.appendChild(iconeAspas)
         li.appendChild(pensamentoConteudo)

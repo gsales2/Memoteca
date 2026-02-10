@@ -34,7 +34,6 @@ const api = {
         }
         catch {
             alert('Erro ao salvar pensamentos')
-            throw error
         }
     },
 
